@@ -8,20 +8,6 @@ $utm_campaign = '-';
 $utm_term = '-';
 $utm_content = '-';
 
-$cities = [
-  'rostov' => ['Ростовская область','в Ростове-на-Дону и Ростовской области'],
-  'stavropol' => ['Ставропольский край','в Ставропольском крае'],
-  'krasnodar' => ['Краснодарский край','в Краснодарском крае'],
-  'crimea' => ['Крым','в республике Крыму'],
-  'adygeya' => ['республика Адыгея','в республике Адыгея'],
-  'karachaycherkess' => ['республика Карачаево-Черкесская','в Карачаево-Черкесской республике'],
-  'kabardinobalkarian' => ['республика Кабардино-Балкарская','в Кабардино-Балкарской республике'],
-  'kalmykia' => ['республика Калмыкия','в республике Калмыкия'],
-  'volgograd' => ['Волгоградская область','в Волгоградской области'],
-  'voronezh' => ['Воронежская область','в Воронежской области'],
-  'astrakhan' => ['Астраханская область','в Астраханской области']
-];
-
 if (isset($_GET['utm_medium'])) {
   $utm_medium = $_GET['utm_medium'];
 }
@@ -37,13 +23,6 @@ if (isset($_GET['utm_campaign'])) {
 if (isset($_GET['utm_term'])) {
   $utm_term = $_GET['utm_term'];
 }
-
-if ( isset($_GET['сity']) && array_key_exists($_GET['сity'], $cities) ) {
-  $сity = $_GET['сity'];
-} else {
-  $сity = 'rostov';
-}
-
 
 if (isset($_GET['utm_content'])) {
   $utm_content = $_GET['utm_content'];
@@ -87,9 +66,9 @@ $utm =  $_SERVER["QUERY_STRING"];
         <div class="col col_lg_6 col_md_6 col_sm_6 col_xs_5">
           <div class="logo">
             <div class="logo__img"><img src="img/logo.png"/>
-            </div><?php if($сity == 'rostov'): ?>
+            </div>
             <div class="logo__text">Ростов-на-Дону,<br>ул. Текучева, 23, эт. 3
-            </div><?php endif;?>
+            </div>
           </div>
         </div>
         <div class="col col_lg_6 col_md_6 col_sm_6 col_xs_7">
@@ -108,23 +87,23 @@ $utm =  $_SERVER["QUERY_STRING"];
   <div class="header">
     <div class="container">
       <div class="offer"> 
-        <div class="offer__text start-animate">Горизонтально направленное бурение <br> <?echo $cities[$сity][1]?></div>
-        <div style="animation-delay: .2s" class="offer__action order start-animate">Пригласить инженера на объект</div>
+        <div class="offer__text start-animate">Индивидуальное проектирование домов и зданий<br/>в Ростове-на-Дону и Ростовской области</div>
+        <div style="animation-delay: .2s" class="offer__action order start-animate">Пригласить архитектора на объект</div>
       </div>
     </div>
   </div>
   <div class="formm">
     <div class="container">
-      <div class="formm__title">Калькулятор расчета стоимости услуг ГНБ
+      <div class="formm__title">Калькулятор расчета стоимости услуг архитектора
       </div>
-      <div class="formm__text">Укажите основные параметры проекта: диаметр трубы и предполагаемую длину прокола,<br>а также ваш номер телефона для получения расчета:
+      <div class="formm__text">Укажите основные параметры проекта: тип объекта и предполагаемую площадь,<br>а также ваш номер телефона для получения расчета:
       </div>
       <div class="form">
         <form class="ajax">
-          <input placeholder="Введите Ваше имя" name="name" class="input input_type_name"/>
-          <input placeholder="Введите Ваш телефон" name="phone" class="input input_type_phone"/>
-          <input placeholder="Диаметр трубы, мм." name="c1" class="input input_type_mini"/>
-          <input placeholder="Длина прокола, п.м." name="c2" class="input input_type_mini"/>
+          <input placeholder="Введите Ваше имя" name="name" class="input"/>
+          <input placeholder="Введите Ваш телефон" name="phone" class="input"/>
+          <input placeholder="Тип объекта" name="c1" class="input input_type_mini"/>
+          <input placeholder="Площадь" name="c2" class="input input_type_mini"/>
           <input type="hidden" name="url" value="<?echo $url?>"/>
           <input type="hidden" name="utm" value="<?echo $utm?>"/>
           <input type="hidden" name="utm_term" value="<?echo $utm_term?>"/>
@@ -138,112 +117,13 @@ $utm =  $_SERVER["QUERY_STRING"];
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="triggers">
-      <div class="row">
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img1.png" class="triggers__img"/>
-          <div class="triggers__text">Опыт работы<br>более 6 лет</div>
-        </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img6.png" class="triggers__img"/>
-          <div class="triggers__text">Цены ниже<br>среднерыночных<br>на 7-12%</div>
-        </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img5.png" class="triggers__img"/>
-          <div class="triggers__text">Применяем<br>сертифицированные<br>материалы</div>
-        </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img10.png" class="triggers__img"/>
-          <div class="triggers__text">Проколы диаметром<br>от 25мм до 900 мм</div>
-        </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img12.png" class="triggers__img"/>
-          <div class="triggers__text">Без выхода на поверхность<br>до 400 м</div>
-        </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img3.png" class="triggers__img"/>
-          <div class="triggers__text">Возможность прокола<br>из колодца в колодец</div>
-        </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img11.png" class="triggers__img"/>
-          <div class="triggers__text">Используем технику <br>с разными возможностями</div>
-        </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
-          <div class="triggers__items"></div><img src="img/triggers__img4.png" class="triggers__img"/>
-          <div class="triggers__text">Предоставляем всю документацию, согласно НОССТРОЙ</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php if($сity == 'rostov'): ?>
-  <div class="stock">
-    <div class="container">
-      <div class="row">
-        <div class="col col_lg_5 col_md_5 col_sm_12 col_xs_12 col_lg-offset_1">
-          <div class="stock__title"><span>Внимание </span>акция!</div>
-          <div class="stock__text">
-             
-            Оставьте заявку <span>СЕГОДНЯ</span> и получите<br/>разовый <span>БЕСПЛАТНЫЙ</span> выезд инженера
-          </div>
-          <div class="timer">
-            <div id="timer">
-              <div class="timer__action">До конца акции осталось:
-              </div>
-              <div class="digits"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col col_lg_5 col_md_6 col_sm_12 col_xs_12">
-          <div class="wall">
-            <div class="wall__title"><span>Заполните форму,</span><br/>чтобы получить бесплатную<br/>консультацию специалиста</div>
-            <div class="form">
-              <form class="ajax">
-                <input placeholder="Введите Ваше имя" name="name" class="input input_type_name"/>
-                <input placeholder="Введите Ваш телефон" name="phone" class="input input_type_phone"/>
-                <input type="hidden" name="url" value="<?echo $url?>"/>
-                <input type="hidden" name="utm" value="<?echo $utm?>"/>
-                <input type="hidden" name="utm_term" value="<?echo $utm_term?>"/>
-                <input type="hidden" name="utm_campaign" value="<?echo $utm_campaign?>"/>
-                <input type="hidden" name="utm_source" value="<?echo $utm_source?>"/>
-                <input type="hidden" name="utm_medium" value="<?echo $utm_medium?>"/>
-                <input type="hidden" name="utm_content" value="<?echo $utm_content?>"/>
-                <input type="hidden" name="order" value="Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Выезд инженера"/>
-                <input type="submit" value="Отправить" class="form__btn"/>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><?php endif;?>
-  <div class="info">
-    <div class="info__container">
-      <div class="info__icon">
-      </div>
-      <div class="info__title">
-      </div>
-      <div class="info__text">
-        <p>ГНБ является альтернативой траншейному методу прокладывания коммуникаций. Такая методика имеет ряд преимуществ, которые заключаются в следующем:</p>
-        <ul>
-          <li>Объем земляных работ минимален, это ускоряет процесс работ и снижает финансовые издержки;</li>
-          <li>Возможность прокладывания коммуникаций в любых условиях: стесненная часть города, под водоемом, дорогой, жд путями и т.д.</li>
-          <li>Не нарушается дорожное покрытие, благоустройстве поверхности и т.д., что исключает издержки на восстановление.</li>
-          <li>Технология ГНБ не требует привлечения большого количества техники, бригады. А установки могут работать автономно, что не требует дополнительного источника питания и т.д.</li>
-        </ul>
-        <p>Таким образом, прокладывание коммуникаций методом ГНБ является современным высокотехнологичным методом, которое позволяет сократить как временные, так и финансовые издержки на строительство.</p>
-      </div>
-    </div>
-  </div>
   <div class="gnb">       
     <div class="title">Производственные мощности
       <div class="container">
         <div class="row">
           <div class="col col_lg_4 col_md_4 col_sm_6 col_xs_12">
             <div class="gnb__item"><img tag="img" src="img/gnb-1.jpg" class="gnb__img" alt="" role="presentation"/>
-              <div class="gnb__title">
-                 
-                Установка горизонтально-направленного бурения<br/><span>TRACTO-TECHNIK GRUNDODRILL 20S</span>
+              <div class="gnb__title"> <span>Эскизное проектирование</span>
               </div>
               <div class="gnb__text">
                 <!--span Технические возможности:-->
@@ -257,15 +137,13 @@ $utm =  $_SERVER["QUERY_STRING"];
                 </ul>
               </div>
               <div class="gnb__btn-wraper">
-                <div data-product="Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Просчитать проект. TRACTO-TECHNIK GRUNDODRILL 20S" class="btn">Просчитать проект</div>
+                <div data-product="!!!!!!!!!!!!!!!!!. Эскизное проектирование" class="btn">Заказать </div>
               </div>
             </div>
           </div>
           <div class="col col_lg_4 col_md_4 col_sm_6 col_xs_12">
             <div class="gnb__item"><img tag="img" src="img/gnb-2.jpg" class="gnb__img" alt="" role="presentation"/>
-              <div class="gnb__title">
-                 
-                Установка управляемого прокола<br/><span>DITCH WITCH P80</span>
+              <div class="gnb__title"><span>Архитектурная рабочая документация</span>
               </div>
               <div class="gnb__text">
                 <!--span Технические возможности:-->
@@ -277,15 +155,13 @@ $utm =  $_SERVER["QUERY_STRING"];
                 </ul>
               </div>
               <div class="gnb__btn-wraper">
-                <div data-product="Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Просчитать проект. DITCH WITCH P80" class="btn">Просчитать проект </div>
+                <div data-product="!!!!!!!!!!!!!!!!!. Архитектурная рабочая документация" class="btn">Заказать </div>
               </div>
             </div>
           </div>
           <div class="col col_lg_4 col_md_4 col_sm_6 col_xs_12">
             <div class="gnb__item"><img tag="img" src="img/gnb-3.jpg" class="gnb__img" alt="" role="presentation"/>
-              <div class="gnb__title">
-                 
-                Установка для прокола<br/><span>УПГК-60У</span>
+              <div class="gnb__title"><span>Дизайн фасада, экстерьера, интерьера. 3D-моделирование</span>
               </div>
               <div class="gnb__text">
                 <!--span Технические возможности:-->
@@ -297,7 +173,7 @@ $utm =  $_SERVER["QUERY_STRING"];
                 </ul>
               </div>
               <div class="gnb__btn-wraper">
-                <div data-product="Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Просчитать проект. УПГК-60У" class="btn">Просчитать проект</div>
+                <div data-product="!!!!!!!!!!!!!!!!!. Дизайн фасада, экстерьера, интерьера. 3D-моделирование" class="btn">Заказать</div>
               </div>
             </div>
           </div>
@@ -478,10 +354,10 @@ $utm =  $_SERVER["QUERY_STRING"];
     <div class="questions__title">Бесплатная консультация эксперта по ГНБ</div>
     <div style="max-width: 800px; margin: auto">Оставьте заявку и наш эксперт свяжется с вами, и расскажет про все преимущества метода горизонтально направленного бурения применительно к решению вашей задачи!</div>
   </div>
-  <div style="margin-bottom: 30px;" class="btn order">Получить бесплатную консультацию</div><?php if($сity == 'rostov'): ?>
-  <div id="map" class="map"></div><?php endif;?>
+  <div style="margin-bottom: 30px;" class="btn order">Получить бесплатную консультацию</div>
+  <div id="map" class="map"></div>
   <div class="footer">
-    <div class="container"><?php if($сity == 'rostov'): ?>
+    <div class="container">
       <div class="row">
         <div class="col col_sm_4">
           <div class="footer__contact footer__contact_type_adress">Ростов-на-Дону,<br>ул. Текучева, 23, эт. 3</div>
@@ -497,24 +373,9 @@ $utm =  $_SERVER["QUERY_STRING"];
           </div>
         </div>
         <div class="col col_sm_4">
-          <div class="footer__contact footer__contact_type_mail">order@bk-invent.ru</div>
-        </div>
-      </div><?php else:?>
-      <div class="row">
-        <div class="col col_sm_6">
-          <div class="footer__contact footer__contact_type_call">
-            <div class="phone-grup phone-grup_footer"> 
-              <div class="phone-grup__phone primegate-phone">8 (863) 303-38-33
-              </div>
-              <div class="phone-grup__text">Пн.- пт. с 9:00 до 18:00<br>Сб. с 10:00 до 16:00
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col col_sm_6">
           <div class="footer__contact footer__contact_type_mail">info@bk-invent.ru</div>
         </div>
-      </div><?php endif;?>
+      </div>
     </div>
   </div>
   <div id="modal__product" class="modal">

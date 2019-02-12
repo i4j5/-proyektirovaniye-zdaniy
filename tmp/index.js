@@ -206,7 +206,7 @@ $(document).ready(function () {
 $(window).on('load', function (e) {
 	window.setTimeout(function () {
 		$('.loader').removeClass('loader_active');
-		$('.offer__text').addClass('animated bounceInLeft finish-animate');
-		$('.offer__action').addClass('animated bounceInRight finish-animate');
+		$('.offer__text').addClass('animated fadeInDown finish-animate');
+		$('.offer__action').addClass('animated fadeInUp finish-animate');
 	}, 100);
 });

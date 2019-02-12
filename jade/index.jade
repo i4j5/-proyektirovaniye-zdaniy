@@ -8,20 +8,6 @@ include ../node_modules/bemto.jade/bemto
   $utm_term = '-';
   $utm_content = '-';
 
-  $cities = [
-    'rostov' => ['Ростовская область','в Ростове-на-Дону и Ростовской области'],
-    'stavropol' => ['Ставропольский край','в Ставропольском крае'],
-    'krasnodar' => ['Краснодарский край','в Краснодарском крае'],
-    'crimea' => ['Крым','в республике Крым'],
-    'adygeya' => ['республика Адыгея','в республике Адыгея'],
-    'karachaycherkess' => ['республика Карачаево-Черкесская','в Карачаево-Черкесской республике'],
-    'kabardinobalkarian' => ['республика Кабардино-Балкарская','в Кабардино-Балкарской республике'],
-    'kalmykia' => ['республика Калмыкия','в республике Калмыкия'],
-    'volgograd' => ['Волгоградская область','в Волгоградской области'],
-    'voronezh' => ['Воронежская область','в Воронежской области'],
-    'astrakhan' => ['Астраханская область','в Астраханской области']
-  ];
-
   if (isset($_GET['utm_medium'])) {
     $utm_medium = $_GET['utm_medium'];
   }
@@ -37,13 +23,6 @@ include ../node_modules/bemto.jade/bemto
   if (isset($_GET['utm_term'])) {
     $utm_term = $_GET['utm_term'];
   }
-
-  if ( isset($_GET['сity']) && array_key_exists($_GET['сity'], $cities) ) {
-    $сity = $_GET['сity'];
-  } else {
-    $сity = 'rostov';
-  }
-
 
   if (isset($_GET['utm_content'])) {
     $utm_content = $_GET['utm_content'];
@@ -89,9 +68,7 @@ body.page
           +b.logo
             +e.img
               img(src='img/logo.png')
-            |<?php if($сity == 'rostov'): ?>
             +e.text Ростов-на-Дону,<br>ул. Текучева, 23, эт. 3
-            |<?php endif;?>
         +b.col._lg_6._md_6._sm_6._xs_7
           +b.phone-grup 
             +e.phone.primegate-phone 8 (863) 303-38-33
@@ -101,20 +78,22 @@ body.page
     .container
       .offer 
         .offer__text.start-animate
-          |Горизонтально направленное бурение <br> <?echo $cities[$сity][1]?>
-        .offer__action.order.start-animate(style="animation-delay: .2s") Пригласить инженера на объект
+          |Индивидуальное проектирование домов и зданий
+          br
+          |в Ростове-на-Дону и Ростовской области
+        .offer__action.order.start-animate(style="animation-delay: .2s") Пригласить архитектора на объект
 
 
   +b.formm
       .container
-        +e.title Калькулятор расчета стоимости услуг ГНБ
-        +e.text Укажите основные параметры проекта: диаметр трубы и предполагаемую длину прокола,<br>а также ваш номер телефона для получения расчета:
+        +e.title Калькулятор расчета стоимости услуг архитектора
+        +e.text Укажите основные параметры проекта: тип объекта и предполагаемую площадь,<br>а также ваш номер телефона для получения расчета:
         +b.form
           form.ajax
-            input(placeholder='Введите Ваше имя' name='name').input.input_type_name
-            input(placeholder='Введите Ваш телефон' name='phone').input.input_type_phone
-            input(placeholder='Диаметр трубы, мм.' name='c1').input.input_type_mini
-            input(placeholder='Длина прокола, п.м.' name='c2').input.input_type_mini
+            input(placeholder='Введите Ваше имя' name='name').input
+            input(placeholder='Введите Ваш телефон' name='phone').input
+            input(placeholder='Тип объекта' name='c1').input.input_type_mini
+            input(placeholder='Площадь' name='c2').input.input_type_mini
             input(type='hidden', name='url', value!="<?echo $url?>")
             input(type='hidden', name='utm', value!="<?echo $utm?>")
             input(type='hidden', name='utm_term', value!="<?echo $utm_term?>")
@@ -125,7 +104,7 @@ body.page
             input(type='hidden', name='order', value!='Горизонтально направленное бурение. <?echo $cities[$сity][0]?>')
             input(type='submit' value='Отправить').form__btn
 
-  .container
+  //-.container
     .triggers
       .row
         +b.col._lg_3._md_3._sm_6._xs_12
@@ -167,8 +146,7 @@ body.page
   //-       p Паспорт водного хозяйства — это один из основных нормативно-технических документов компании, позволяющий осуществлять учет количества и состава производственных сбросов в систему канализации. В нем содержатся данные о том, к аким образом предприятие использует находящиеся в его распоряжении водные ресурсы, а также определяется степень воздействия деятельности компании на окружающую среду.
   //-       p Срок действия документа — 5 лет
 
-  |<?php if($сity == 'rostov'): ?>
-  .stock
+  //-.stock
     .container
       .row
         +b.col._lg_5._md_5._sm_12._xs_12._lg-offset_1
@@ -215,9 +193,8 @@ body.page
                 input(type='hidden', name='utm_content', value!="<?echo $utm_content?>")
                 input(type='hidden', name='order', value!='Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Выезд инженера')
                 input(type='submit' value='Отправить').form__btn
-  |<?php endif;?>
 
-  +b.info
+  //-+b.info
     +e.container
         +e.icon
         +e.title
@@ -242,9 +219,7 @@ body.page
             +e.item
               +e(tag="img", src="img/gnb-1.jpg").img
               +e.title 
-                |Установка горизонтально-направленного бурения
-                br
-                span TRACTO-TECHNIK GRUNDODRILL 20S
+                span Эскизное проектирование
               +e.text
                 //span Технические возможности:
                 ul
@@ -255,14 +230,12 @@ body.page
                   li Использование бентонитов и полимеров для песчаных и суглинистых пород
                   li Непрерывная автономная работа в любой местности. 
               +e.btn-wraper
-                .btn(data-product!="Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Просчитать проект. TRACTO-TECHNIK GRUNDODRILL 20S") Просчитать проект
+                .btn(data-product!="!!!!!!!!!!!!!!!!!. Эскизное проектирование") Заказать 
           .col.col_lg_4.col_md_4.col_sm_6.col_xs_12
             +e.item
               +e(tag="img", src="img/gnb-2.jpg").img
-              +e.title 
-                |Установка управляемого прокола
-                br
-                span DITCH WITCH P80
+              +e.title
+                span Архитектурная рабочая документация
               +e.text
                 //span Технические возможности:
                 ul
@@ -271,14 +244,12 @@ body.page
                   li Возможность прокладывания коммуникаций в стесненных условиях (под дорогой, под трамвайными путями, под железной дорогой) 
                   li Непрерывная автономная работа
               +e.btn-wraper
-                .btn(data-product!="Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Просчитать проект. DITCH WITCH P80") Просчитать проект 
+                .btn(data-product!="!!!!!!!!!!!!!!!!!. Архитектурная рабочая документация") Заказать 
           .col.col_lg_4.col_md_4.col_sm_6.col_xs_12
             +e.item
               +e(tag="img", src="img/gnb-3.jpg").img
-              +e.title 
-                |Установка для прокола
-                br
-                span УПГК-60У
+              +e.title
+                span Дизайн фасада, экстерьера, интерьера. 3D-моделирование
               +e.text
                 //span Технические возможности:
                 ul
@@ -287,7 +258,7 @@ body.page
                   li Кроме протяжки новых трубопроводов, можно проводить санацию трубопровода из колодца, котлована, подвальных помещений.
                   li Установка работает как от гидравлической станции, так и от гидросистемы строительной техники, с помощью блока согласования. Малый вес установки позволяет транспортировать ее в багажнике автомобиля. 
               +e.btn-wraper
-                .btn(data-product!="Горизонтально направленное бурение. <?echo $cities[$сity][0]?>. Просчитать проект. УПГК-60У") Просчитать проект
+                .btn(data-product!="!!!!!!!!!!!!!!!!!. Дизайн фасада, экстерьера, интерьера. 3D-моделирование") Заказать
 
   .title КАКИЕ УСЛУГИ ОКАЗЫВАЕМ?
   .container
@@ -440,12 +411,9 @@ body.page
     .questions__title Бесплатная консультация эксперта по ГНБ
     div(style="max-width: 800px; margin: auto") Оставьте заявку и наш эксперт свяжется с вами, и расскажет про все преимущества метода горизонтально направленного бурения применительно к решению вашей задачи!
   .btn.order(style="margin-bottom: 30px;") Получить бесплатную консультацию
-  |<?php if($сity == 'rostov'): ?>
   .map#map
-  |<?php endif;?>
   .footer
     .container
-      |<?php if($сity == 'rostov'): ?>
       .row
         +b.col_sm_4
           .footer__contact.footer__contact_type_adress Ростов-на-Дону,<br>ул. Текучева, 23, эт. 3
@@ -455,17 +423,7 @@ body.page
               +e.phone.primegate-phone 8 (863) 303-38-33
               +e.text Пн.- пт. с 9:00 до 18:00<br>Сб. с 10:00 до 16:00
         +b.col_sm_4
-          .footer__contact.footer__contact_type_mail order@bk-invent.ru
-      |<?php else:?>
-      .row
-        +b.col_sm_6
-          .footer__contact.footer__contact_type_call
-            +b.phone-grup._footer 
-              +e.phone.primegate-phone 8 (863) 303-38-33
-              +e.text Пн.- пт. с 9:00 до 18:00<br>Сб. с 10:00 до 16:00
-        +b.col_sm_6
-            .footer__contact.footer__contact_type_mail info@bk-invent.ru
-      |<?php endif;?>
+          .footer__contact.footer__contact_type_mail info@bk-invent.ru
   #modal__product.modal
     .modal__wrapper
       .modal__dialog
