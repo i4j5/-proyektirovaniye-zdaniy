@@ -903,3 +903,41 @@
         width 100% 
     & .btn
         font-weight 500
+
+.p-box
+    position relative
+    display flex
+    justify-content center
+    &__text
+        border-radius 10px
+        padding 20px
+        font-size 16px
+        line-height 1.4em
+        max-width 400px
+        width 100%
+        background #3e94eb
+        color #fff
+    &__p
+        background #ddd
+        color #000
+        line-height 1.2em
+        text-align center
+        padding 10px 20px 
+        display table
+        font-size 18px
+        border-radius 10px
+        // border-top-left-radius 10px
+        // border-bottom-left-radius 10px
+        display table
+        margin auto 15px
+        position relative
+        border 3px solid #3e94eb
+        &:before
+            content ' '
+            width 20px 
+            height 6px
+            position absolute
+            right -20px
+            top 50%
+            margin-top -3px
+            background #3e94eb
