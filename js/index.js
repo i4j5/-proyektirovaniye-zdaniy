@@ -65,11 +65,9 @@ $(document).ready(()=>{
 	});
 
 	$('.product__btn').click(function(event) {
-		/// Баланс водопотребления и водоотведения
-		let product = $(this).data('product')
-		$('#product-input').val(product)
-		yatarget = 'order'
-		$('#modal__product').openModal()
+		let img = $(this).data('img');
+		$('#zoom__img-k').attr('src', 'img/' + img)
+		$('#modal__k').openModal()
 	})
 
 	$('.gnb .btn').click(function(event) {
