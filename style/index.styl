@@ -161,7 +161,7 @@
         margin-bottom 50px
         font-weight 700
         @media (min-width 640px)
-            font-size 30px
+            font-size 37px
         font-size 20px
         color #000
         line-height 1.8em
@@ -273,6 +273,7 @@
 .product
     background #f1f1f1
     line-height 1.2em
+    margin auto
     text-align center
     font-weight 500
     margin-bottom 20px
@@ -329,9 +330,6 @@
         cursor pointer
         width fit-content
             
-            
-
-
 .input
     font-size 16px
     color #545454
@@ -453,9 +451,10 @@
         text-transform uppercase
         z-index 100
         position relative
-        color #410c75 
+        color #410c75
+        font-weight 500 
     &__text
-        font-size 14px
+        font-size 16px
         line-height 1.4em
         color #454545
         //margin-bottom 20px
@@ -824,6 +823,7 @@
 .formm
     padding 40px 0
     background #ddd
+    text-align center
     &__title
         font-size 24px
         text-transform: uppercase
@@ -835,14 +835,15 @@
         width 230px
         margin 10px 10px 10px 0
         padding-right 15px
-        &_type_mini
-            width 210px
+        // &_type_mini
+        //     width 210px
     // .form
     //     display table
     //     margin auto 
         
     .form__btn
         margin-left 10px
+        margin-top 10px
         
 .gnb
     .row
@@ -873,22 +874,27 @@
         padding 10px 20px 5px 20px
         font-size 16px
         line-height 1.5em
+        text-align center
     &__text
         font-size 14px
         line-height 1.7em
-        padding 10px 15px
-        margin-bottom 15px
+        padding 10px 20px
+        // margin-bottom 15px
         span
-            font-weight 700 
-            margin-bottom 10px
+            font-weight 600 
+            // margin-bottom 10px
             display block
+            line-height 1.5em
+            text-align center
         ul
             padding-left 15px
         li
             list-style-type none
             position relative
-            font-size 13px
-            line-height 1.5em
+            font-size 15px
+            @media (min-width 600px)
+                font-size 13px
+            line-height 1.6em
             margin-bottom 8px
             &:before
                 content '•'
@@ -900,11 +906,16 @@
                 color #3e94eb
                 font-size 30px
         p 
-            font-size 13px 
+            font-size 15px
+            @media (min-width 500px)
+                font-size 13px
             line-height 1.5em
-            font-weight 600
+            font-weight 700
             margin-bottom 20px
             margin-top 20px
+            color #3e94eb
+            text-align center
+            //text-shadow 0 0 1px rgba(0, 0, 0, 0.32)
     &__img
         width 100%
 
@@ -933,6 +944,7 @@
         width 100%
         background #3e94eb
         color #fff
+        text-align center
     &__p
         background #ddd
         color #000
@@ -947,6 +959,8 @@
         margin auto 15px auto 0px
         position relative
         border 3px solid #3e94eb
+        @media (max-width 430px)
+            width 100%
         &:before
             content ' '
             width 20px 
@@ -972,3 +986,9 @@
     padding 30px 40px 
     border-radius 10px 
     margin 20px auto 10px auto
+    
+
+// .modal
+//     img
+//         position relative
+//         

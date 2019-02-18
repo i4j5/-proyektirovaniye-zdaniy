@@ -82,6 +82,12 @@ $(document).ready(()=>{
 		$('#modal__order').openModal()
 	})
 
+	$('.order-m').click(function(event) {
+		$('.modal').closeModal()
+		yatarget = 'advice'
+		$('#modal__order').openModal()
+	})
+
 	$('.zoom').click(function(event) {
 		let img = $(this).data('img');
 		$('#zoom__img').attr('src', 'img/' + img);
