@@ -70,7 +70,7 @@ $(document).ready(()=>{
 		$('#modal__k').openModal()
 	})
 
-	$('.gnb .btn').click(function(event) {
+	$('.gnb__item').click(function(event) {
 		let product = $(this).data('product')
 		$('#product-input').val(product)
 		yatarget = 'order'
@@ -121,7 +121,7 @@ $(document).ready(()=>{
 	        var form = $(form);
 
 	        if( form.children("[name='c1']").val() ){
-	        	let text = ` ${form.children("[name='order']").val()} - Диаметр: ${form.children("[name='c1']").val()}  Длина : ${form.children("[name='c2']").val()} `
+	        	let text = ` ${form.children("[name='order']").val()} - Тип объекта: ${form.children("[name='c1']").val()}  Площадь: ${form.children("[name='c2']").val()} `
 	        	form.children("[name='order']").val(text)
 	        }
 

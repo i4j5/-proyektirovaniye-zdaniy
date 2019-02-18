@@ -77,7 +77,7 @@ $(document).ready(function () {
 		$('#modal__k').openModal();
 	});
 
-	$('.gnb .btn').click(function (event) {
+	$('.gnb__item').click(function (event) {
 		var product = $(this).data('product');
 		$('#product-input').val(product);
 		yatarget = 'order';
@@ -126,7 +126,7 @@ $(document).ready(function () {
 				var form = $(form);
 
 				if (form.children("[name='c1']").val()) {
-					var text = ' ' + form.children("[name='order']").val() + ' - \u0414\u0438\u0430\u043C\u0435\u0442\u0440: ' + form.children("[name='c1']").val() + '  \u0414\u043B\u0438\u043D\u0430 : ' + form.children("[name='c2']").val() + ' ';
+					var text = ' ' + form.children("[name='order']").val() + ' - \u0422\u0438\u043F \u043E\u0431\u044A\u0435\u043A\u0442\u0430: ' + form.children("[name='c1']").val() + '  \u041F\u043B\u043E\u0449\u0430\u0434\u044C: ' + form.children("[name='c2']").val() + ' ';
 					form.children("[name='order']").val(text);
 				}
 

@@ -845,7 +845,12 @@
         margin-left 10px
         
 .gnb
+    .row
+        align-items stretch
+    .col
+        display flex
     &__item
+        cursor pointer
         border-radius 15px
         position relative
         overflow hidden
@@ -861,17 +866,17 @@
             top -10px
     &__title
         span
-            font-size 18px
+            font-size 16px
             line-height 1.5em
         font-weight 700
         // font-weight 300
-        padding 10px 20px
+        padding 10px 20px 5px 20px
         font-size 16px
         line-height 1.5em
     &__text
         font-size 14px
-        line-height 1.8em
-        padding 10px 20px
+        line-height 1.7em
+        padding 10px 15px
         margin-bottom 15px
         span
             font-weight 700 
@@ -884,7 +889,7 @@
             position relative
             font-size 13px
             line-height 1.5em
-            margin-bottom 10px
+            margin-bottom 8px
             &:before
                 content '•'
                 display block
@@ -894,6 +899,12 @@
                 left -15px
                 color #3e94eb
                 font-size 30px
+        p 
+            font-size 13px 
+            line-height 1.5em
+            font-weight 600
+            margin-bottom 20px
+            margin-top 20px
     &__img
         width 100%
 
