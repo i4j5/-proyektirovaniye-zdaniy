@@ -154,7 +154,7 @@ $(document).ready(()=>{
 	           } else {
            			$('#modal__ok').openModal()
 	           }
-	           yaCounter51667697.reachGoal(yatarget)
+	           yaCounter52451677.reachGoal(yatarget)
 	           yatarget = 'stock'
 	        })
 	        .always(function() {
