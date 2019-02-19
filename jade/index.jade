@@ -553,22 +553,22 @@ body.page
             .scheme__title Мы желаем вам всего самого наилучшего!
             .scheme__text Вы возводите Дом Вашей Мечты и приглашаете нашу команду на новоселье! (шутка, хотя и такие случаи происходят в нашей практике) 
 
+  .bg
+    .container
+      +b.p-box
+        +e.p Сроки реализации
+        +e.text
+          |Срок реализации проекта зависит от скорости Ваших согласований и плотного взаимодействия с архитектором!
+          br
+          br
+          |Срок изготовления комплекта чертежей рабочей документации занимает от 14 дней!
 
-  .container
-    +b.p-box
-      +e.p Сроки реализации
-      +e.text
-        |Срок реализации проекта зависит от скорости Ваших согласований и плотного взаимодействия с архитектором!
-        br
-        br
-        |Срок изготовления комплекта чертежей рабочей документации занимает от 14 дней!
 
 
-
-  .container        
-    .questions
-      .questions__title Выберите удобное время для встречи,<br>и мы подробно обсудим Ваш будущий дом
-    .btn.order(style="margin-bottom: 30px;") Обсудить проект с архитектором
+    .container        
+      .questions
+        .questions__title Выберите удобное время для встречи,<br>и мы подробно обсудим Ваш будущий дом
+      .btn.order(style="margin-bottom: 30px;") Обсудить проект с архитектором
   .map#map
   .footer
     .container
@@ -632,13 +632,15 @@ body.page
     .modal__wrapper
         .modal__dialog
             .close.modal__close
-            img(src="")#zoom__img
+            .zoom-img  
+              img(src="")#zoom__img
 
   .modal.modal_type_zoom#modal__k
     .modal__wrapper
         .modal__dialog
             .close.modal__close
-            img(src="")#zoom__img-k
+            .zoom-img
+              img(src="")#zoom__img-k
             .btn.order-m(style="margin-bottom: 30px;") Обсудить проект с архитектором
             //- .form-k
             //-   .modal__title Получить бесплатную консультацию

@@ -26,6 +26,13 @@
 
 $(document).ready(()=>{
 
+	$(window).resize(() =>  {
+		$('.zoom-img').addClass('zoom-none')
+	})
+
+
+
+
   	let now = new Date();
 
 	let endTS = now.getTime() + 100176000;
@@ -65,6 +72,7 @@ $(document).ready(()=>{
 	});
 
 	$('.product__btn').click(function(event) {
+		$('.zoom-img').removeClass('zoom-none')
 		let img = $(this).data('img');
 		$('#zoom__img-k').attr('src', 'img/' + img)
 		$('#modal__k').openModal()
@@ -89,6 +97,7 @@ $(document).ready(()=>{
 	})
 
 	$('.zoom').click(function(event) {
+		$('.zoom-img').removeClass('zoom-none')
 		let img = $(this).data('img');
 		$('#zoom__img').attr('src', 'img/' + img);
 		$('#modal__zoom').openModal()
@@ -220,3 +229,4 @@ $(window).on('load', e => {
 		$('.offer__action').addClass('animated fadeInUp finish-animate')
 	}, 100);   
 })
+

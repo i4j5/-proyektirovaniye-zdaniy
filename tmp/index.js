@@ -25,6 +25,10 @@
 
 $(document).ready(function () {
 
+	$(window).resize(function () {
+		$('.zoom-img').addClass('zoom-none');
+	});
+
 	var now = new Date();
 
 	var endTS = now.getTime() + 100176000;
@@ -72,6 +76,7 @@ $(document).ready(function () {
 	});
 
 	$('.product__btn').click(function (event) {
+		$('.zoom-img').removeClass('zoom-none');
 		var img = $(this).data('img');
 		$('#zoom__img-k').attr('src', 'img/' + img);
 		$('#modal__k').openModal();
@@ -96,6 +101,7 @@ $(document).ready(function () {
 	});
 
 	$('.zoom').click(function (event) {
+		$('.zoom-img').removeClass('zoom-none');
 		var img = $(this).data('img');
 		$('#zoom__img').attr('src', 'img/' + img);
 		$('#modal__zoom').openModal();
