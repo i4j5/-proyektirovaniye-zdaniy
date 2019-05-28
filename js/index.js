@@ -26,13 +26,6 @@
 
 $(document).ready(()=>{
 
-	$(window).resize(() =>  {
-		$('.zoom-img').addClass('zoom-none')
-	})
-
-
-
-
   	let now = new Date();
 
 	let endTS = now.getTime() + 100176000;
@@ -72,7 +65,6 @@ $(document).ready(()=>{
 	});
 
 	$('.product__btn').click(function(event) {
-		$('.zoom-img').removeClass('zoom-none')
 		let img = $(this).data('img');
 		$('#zoom__img-k').attr('src', 'img/' + img)
 		$('#modal__k').openModal()
@@ -97,7 +89,6 @@ $(document).ready(()=>{
 	})
 
 	$('.zoom').click(function(event) {
-		$('.zoom-img').removeClass('zoom-none')
 		let img = $(this).data('img');
 		$('#zoom__img').attr('src', 'img/' + img);
 		$('#modal__zoom').openModal()
@@ -142,6 +133,9 @@ $(document).ready(()=>{
 
 	        let str = form.serialize()
 
+	        let roistat = window.roistat.visit || null
+	        str = str + '&roistat=' + roistat
+
 	        let btn = form.children("[type='submit']")
 	        //let btnText = btn.val()
 	        //btn.val('Обработка...')
@@ -150,7 +144,7 @@ $(document).ready(()=>{
 	        let download = form.children("[name='download']").val()
 
 	        $.ajax({
-	          url: 'http://lp.bk-invent.ru/send.php',
+	          url: '//lp.bk-invent.ru/send.php',
 	          type: 'post',
 	          data: str
 	        })
@@ -163,8 +157,9 @@ $(document).ready(()=>{
 	           } else {
            			$('#modal__ok').openModal()
 	           }
-	           yaCounter52451677.reachGoal(yatarget)
+	           yaCounter51667697.reachGoal(yatarget)
 	           yatarget = 'stock'
+	           yaCounter53737453.reachGoal('site')
 	        })
 	        .always(function() {
 			   //btn.val(btnText)
@@ -229,4 +224,3 @@ $(window).on('load', e => {
 		$('.offer__action').addClass('animated fadeInUp finish-animate')
 	}, 100);   
 })
-
