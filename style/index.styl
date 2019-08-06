@@ -118,7 +118,7 @@
         margin-top 0
     &__phone
         font-size 20px
-        color #000
+        color #000 
         font-weight 600
     &__text
         margin-top 10px
@@ -128,14 +128,15 @@
         margin-top 15px
         font-size 16px
         line-height 1.4em
-
+        
+        
 .header
     width 100%
-    height 590px
+    // height 300px
     // padding 200px 0
     text-align center
-    background #fff url('../img/header-img.png')no-repeat center bottom
-    padding 200px 0 100px 0
+    background #fff url('../img/header-img.png')no-repeat center top 
+    padding 90px 0 80px 0
 
 .offer
     // text-align left !important
@@ -435,7 +436,7 @@
 .scheme 
     font-weight 300
     color #000
-    background #eee
+    background #f8f8f8
     padding 20px 0 30px 0
     // margin-top 50px
     &__item
@@ -444,7 +445,6 @@
         padding 30px 25px
         position relative
         margin-bottom 20px
-        box-shadow 0 2px 30px 0 rgba(207, 207, 207, .54)
     &__title
         font-size 20px 
         line-height 1.3em
@@ -606,7 +606,6 @@
                 margin-bottom 15px
             img
                 max-width 100%
-                position relative
             .form__btn
                 width 100%
                 margin-top 15px
@@ -933,7 +932,7 @@
         font-weight 500
 
 .p-box
-    padding-top 50px
+    margin-top 50px
     position relative
     display flex
     justify-content center
@@ -1003,82 +1002,3 @@
     background-image url('../img/bg.jpg')
     background-position center top
     background-repeat repeat-y
-    
-
-.zoom-img
-    position relative
-    &:before
-    &:after
-        content " "
-        position absolute
-        top 50%
-        left 50%
-        background url(../img/zoom-img.png)
-        width 40px
-        height 40px
-        display block
-        @media (min-width 700px)
-            display none
-        z-index 1
-        opacity .49
-    &:before
-        margin-top -40px
-        margin-left 0    
-        animation zoom-img__before 2s ease-in-out infinite
-    &:after
-        margin-left -40px
-        margin-top 0px
-        transform rotate(180deg)
-        animation zoom-img__after 2s ease-in-out infinite
-        
-
-.zoom-none
-    &:before
-    &:after
-        display none   
-@keyframes zoom-img__before
-    from
-        margin-top -40px
-        margin-left 0
-    50%
-        margin-top -70px
-        margin-left 30px
-    to
-        margin-top -40px
-        margin-left 0
-        
-@keyframes zoom-img__after
-    from
-        margin-left -40px
-        margin-top 0px
-    50%
-        margin-top 30px
-        margin-left -70px
-    to
-        margin-left -40px
-        margin-top 0px
-        
-.order-m
-    line-height 1.2em
-    height auto
-    padding 15px 25px
-    margin-top 10px
-    
-.aa
-    padding-bottom 30px
-    img
-        @media (min-width 960px)
-            float left
-        margin 20px
-        margin-top -15px
-    &__text
-        // display inline
-        //float right
-        line-height 1.6em
-        margin-bottom 50px
-        p
-            font-size 14px
-            margin 10px 0
-            position relative
-            // &:before
-            //     content "• "
