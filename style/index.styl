@@ -226,17 +226,17 @@
     //     margin-bottom 10px
     //     float left
 
-//ТРИГЕРЫ
-.triggers
-    width 100%
-    text-align center
-    margin-bottom 60px
-    &__text
-        font-size 17px 
-        line-height 1.3em
-        color #000
-    &__img
-        margin 60px 0 10px
+// //ТРИГЕРЫ
+// .triggers
+//     width 100%
+//     text-align center
+//     margin-bottom 60px
+//     &__text
+//         font-size 17px 
+//         line-height 1.3em
+//         color #000
+//     &__img
+//         margin 60px 0 10px
     
 .about
     font-weight 300
@@ -1002,3 +1002,178 @@
     background-image url('../img/bg.jpg')
     background-position center top
     background-repeat repeat-y
+
+
+//////////////
+
+
+
+.reviews2
+    border-radius 5px
+    background-image linear-gradient( 45deg, rgba(214,227,254,.4) 0%, rgba(201,199,199,.4) 78%, rgba(213,213,213,.4) 100%)
+    padding 20px 0
+    position relative
+    margin 30px 0 
+    &__title
+        color #3d3d3d
+        // font-weight 500
+        font-size 22px
+        line-height 1.3em
+        text-align center
+        padding 0 10px
+        margin-bottom 30px
+        @media (min-width 700px)
+            font-size 28px
+    &__items
+        position relative
+    &__item
+        text-align center
+        padding 0 20px
+        @media (min-width 1000px)
+            padding 0 40px
+        @media (min-width 700px)
+            display flex
+            align-items flex-start
+            padding-bottom 50px !important
+    &__person
+        @media (min-width 700px)
+            margin-right 40px
+    &__avatar
+        border-radius 100% !important
+        width 130px !important
+        height 130px !important
+        max-width 130px !important
+    &__name
+        color #52475b
+        line-height 1em
+        font-size 16px 
+        // font-weight 600
+        margin-bottom 5px
+        @media (min-width 700px)
+            font-size 18px
+    &__links
+        margin 10px 0 0 0
+        img 
+            width 25px
+    &__description
+        font-size 17px
+        line-height 1.45em
+        margin 0 0 10px 0
+        font-weight 500
+    &__text
+        font-size 14px
+        line-height 1.45em
+        color #363636
+        text-align left
+        position relative
+        @media (min-width 700px)
+            padding 10px 70px 20px 70px 
+            font-size 16px 
+            &:before
+            &:after
+                content ''
+                position absolute
+                width 51px 
+                height 41px
+                background-repeat no-repeat
+                background-size contain
+            &:before
+                background-image url(../img/quote-before.svg)
+                top 0
+                left 0
+            &:after
+                background-image url(../img/quote-after.svg)
+                right 0
+                bottom 0             
+.bx-wrapper
+    position relative
+
+// .cases__next
+// .cases__prev
+.bx-prev
+.bx-next
+    position absolute
+    border-radius 5px
+    background #fff
+    box-shadow 0px 1px 4px 0px rgba(151, 147, 147, 0.5)
+    width 40px 
+    height 40px
+    top 110px
+    @media (min-width 700px)
+        top auto
+        bottom -10px
+    &:before
+    &:after
+        content ''
+        position absolute
+        width 18px
+        height 2px
+        background #4274d6
+.bx-prev
+    left -15px
+    @media (min-width 700px)
+        left auto 
+        right 58px
+    &:before
+        transform rotate(-45deg)
+        top 13px
+        left 10px
+    &:after
+        transform rotate(45deg)
+        top 25px
+        left 10px
+.bx-next
+    right -15px
+    @media (min-width 700px)
+        right 10px
+    &:before
+        transform rotate(45deg)
+        top 13px
+        right 10px
+    &:after
+        transform rotate(-45deg)
+        top 25px
+        right 10px
+        
+
+.triggers
+    padding 25px 0
+    background #fff url('../img/triggers-bg.jpg') center no-repeat
+    background-size cover
+    //background-attachment fixed
+    box-shadow inset 0px 4px 20px 0px rgba(0,0,0,0.09)
+    &__items
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-top: 30px;
+        margin-top 30px
+    &__item
+        box-sizing: border-box;
+        word-wrap: break-word;
+        margin-left: 10px;
+        margin-right: 10px;
+        @media (min-width 700px)
+            width: calc(50% - 20px);
+        border 2px solid #d1ddec
+        border-radius 4px
+        padding 15px 10px 
+        margin-bottom 20px
+        font-size 16px 
+        @media (min-width 700px)
+            font-size 17px
+        display flex
+        align-items center
+        img
+            margin 0 15px 0 0
+            width auto
+            max-width 50px
+    &__title
+        font-size 22px 
+        @media (min-width 700px)
+            font-size 25px 
+        line-height 1.2em
+        color #000
+        text-align center
+        margin-bottom 5px

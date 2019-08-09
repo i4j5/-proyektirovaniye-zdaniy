@@ -25,10 +25,6 @@
 
 $(document).ready(function () {
 
-	$(window).resize(function () {
-		$('.zoom-img').addClass('zoom-none');
-	});
-
 	var now = new Date();
 
 	var endTS = now.getTime() + 100176000;
@@ -76,7 +72,6 @@ $(document).ready(function () {
 	});
 
 	$('.product__btn').click(function (event) {
-		$('.zoom-img').removeClass('zoom-none');
 		var img = $(this).data('img');
 		$('#zoom__img-k').attr('src', 'img/' + img);
 		$('#modal__k').openModal();
@@ -101,7 +96,6 @@ $(document).ready(function () {
 	});
 
 	$('.zoom').click(function (event) {
-		$('.zoom-img').removeClass('zoom-none');
 		var img = $(this).data('img');
 		$('#zoom__img').attr('src', 'img/' + img);
 		$('#modal__zoom').openModal();
@@ -144,6 +138,9 @@ $(document).ready(function () {
 
 				var str = form.serialize();
 
+				var roistat = window.roistat.visit || null;
+				str = str + '&roistat=' + roistat;
+
 				var btn = form.children("[type='submit']");
 				//let btnText = btn.val()
 				//btn.val('Обработка...')
@@ -152,7 +149,7 @@ $(document).ready(function () {
 				var download = form.children("[name='download']").val();
 
 				$.ajax({
-					url: 'http://lp.bk-invent.ru/send.php',
+					url: '//lp.bk-invent.ru/send.php',
 					type: 'post',
 					data: str
 				}).done(function () {
@@ -164,8 +161,9 @@ $(document).ready(function () {
 					} else {
 						$('#modal__ok').openModal();
 					}
-					yaCounter52451677.reachGoal(yatarget);
+					yaCounter51667697.reachGoal(yatarget);
 					yatarget = 'stock';
+					yaCounter53737453.reachGoal('site');
 				}).always(function () {
 					//btn.val(btnText)
 					$('.loader_submit').removeClass('loader_active');
@@ -211,6 +209,15 @@ $(document).ready(function () {
 
 		map.geoObjects.add(placemark);
 	}
+});
+
+$('.reviews2__items').bxSlider({
+	// nextSelector: 'reviews__next',
+	// prevSelector:'reviews__prev',
+	touchEnabled: false,
+	nextText: '',
+	prevText: '',
+	pager: false
 });
 
 $(window).on('load', function (e) {
